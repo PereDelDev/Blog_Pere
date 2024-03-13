@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { PostsService } from '../../services/posts.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formulario',
@@ -10,7 +11,7 @@ import { PostsService } from '../../services/posts.service';
   styleUrl: './formulario.component.css'
 })
 export class FormularioComponent {
-
+route = inject(Router)
 postServices = inject(PostsService)
 
 formulario: FormGroup = new FormGroup({
@@ -24,6 +25,6 @@ formulario: FormGroup = new FormGroup({
 
 onSubmit(){
 this.postServices.create(this.formulario.value)
-console.log(this.formulario.value)
+this.route.navigate(['/posts'])
 }
 }

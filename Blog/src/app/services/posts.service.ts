@@ -20,4 +20,8 @@ getCategories(){
   getByCategoria(cat: string){
     return this.arrPost.filter(post => post.categoria === cat)
   }
+  getPost(id:number){
+    return POSTS.find(post => post.id === id)
+  }
 }
+
