@@ -1,8 +1,8 @@
 export interface Post{
     titulo: string,
     texto: string,
-    auto: string,
+    autor: string,
     imagen: string,
-    fecha: Date,
+    fecha: string,
     categoria:string
 }

@@ -5,7 +5,7 @@
   </div>
   <div>
     <label class="label-control">Texto</label>
-    <input class="form-control" formControlName="textp" type="text" />
+    <input class="form-control" formControlName="texto" type="text" />
   </div>
   <div>
     <label class="label-control">Autor</label>
@@ -23,5 +23,10 @@
     <label class="label-control">Categoria</label>
     <input class="form-control" formControlName="categoria" type="text" />
   </div>
-  <input class="btn btn-warning" value="Enviar" type="submit" />
+  <input
+    class="btn btn-warning"
+    [disabled]="!formulario.valid"
+    value="Enviar"
+    type="submit"
+  />
 </form>

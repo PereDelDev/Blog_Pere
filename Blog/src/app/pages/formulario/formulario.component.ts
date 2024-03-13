@@ -24,5 +24,6 @@ formulario: FormGroup = new FormGroup({
 
 onSubmit(){
 this.postServices.create(this.formulario.value)
+console.log(this.formulario.value)
 }
 }
