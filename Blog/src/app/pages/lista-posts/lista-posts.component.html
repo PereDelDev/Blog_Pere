@@ -1,4 +1,7 @@
 <div class="container">
+  @for (categoria of arrCategorias; track $index) {
+    <button (click)="onClick(categoria)">{{ categoria }}</button>
+  }
   <div class="row">
     @for (post of arrPost; track $index) {
       <article class="col-12 col-md-6 col-lg-3">

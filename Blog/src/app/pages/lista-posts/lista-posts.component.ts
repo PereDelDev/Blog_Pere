@@ -10,10 +10,14 @@ import { Post } from '../../interfaces/post.interface';
   styleUrl: './lista-posts.component.css'
 })
 export class ListaPostsComponent {
-  
+  arrCategorias: string[] = []
 postServices = inject(PostsService)
 arrPost: Post[] = []
 ngOnInit(){
   this.arrPost = this.postServices.getAll()
+  this.arrCategorias = this.postServices.getCategories()
+}
+onClick(categoria: string){
+  this.arrPost = this.postServices.getByCategoria(categoria)
 }
 }

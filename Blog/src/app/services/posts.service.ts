@@ -8,7 +8,9 @@ import { POSTS } from '../data/posts.data';
 export class PostsService {
     
   arrPost: Post[]= POSTS
-
+getCategories(){
+  return [...new Set(this.arrPost.map(post => post.categoria))]
+}
   create(post: Post){
     this.arrPost.push(post)
   }
