@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { PostsService } from '../../services/posts.service';
 
 @Component({
   selector: 'app-lista-posts',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './lista-posts.component.css'
 })
 export class ListaPostsComponent {
-
+postServices = inject(PostsService)
 }
