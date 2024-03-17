@@ -3,6 +3,7 @@ import { PostsService } from '../../services/posts.service';
 import { Post } from '../../interfaces/post.interface';
 import { Router } from '@angular/router';
 import { CutTextPipe } from '../../cut-text.pipe';
+import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-lista-posts',
@@ -20,10 +21,14 @@ export class ListaPostsComponent {
   arrPost: Post[] = []
   arrCategorias: string[] = []
 textoCortado:string = ''
+arrPostNuevo: Post[]= []
 
 ngOnInit(){
   this.arrPost = this.postServices.getAll()
   this.arrCategorias = this.postServices.getCategories()
+  const objetoJson = localStorage.getItem('nuevosPost')
+  this.arrPost.push(JSON.parse(objetoJson!))
+  
 }
 onClick(categoria: string){
   this.arrPost = this.postServices.getByCategoria(categoria)
