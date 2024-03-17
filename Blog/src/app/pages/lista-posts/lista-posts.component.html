@@ -1,5 +1,8 @@
 <div class="container">
   <button (click)="onClickGetAll()">Todos</button>
+  @if (categoriaJson !== "") {
+    <button (click)="onClick(categoriaJson)">{{ categoriaJson }}</button>
+  }
   @for (categoria of arrCategorias; track $index) {
     <button (click)="onClick(categoria)">{{ categoria }}</button>
   }

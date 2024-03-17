@@ -3,7 +3,7 @@ import { PostsService } from '../../services/posts.service';
 import { Post } from '../../interfaces/post.interface';
 import { Router } from '@angular/router';
 import { CutTextPipe } from '../../cut-text.pipe';
-import { JsonPipe } from '@angular/common';
+
 
 @Component({
   selector: 'app-lista-posts',
@@ -21,7 +21,8 @@ export class ListaPostsComponent {
   arrPost: Post[] = []
   arrCategorias: string[] = []
 textoCortado:string = ''
-arrPostNuevo: Post[]= []
+categoriaJson: string = ''
+
 
 ngOnInit(){
   this.arrPost = this.postServices.getAll()
@@ -30,6 +31,8 @@ ngOnInit(){
  
 
   if(this.arrPost.length < 7 && objetoJson !== null){
+   let objeto = JSON.parse(objetoJson)
+   this.categoriaJson = objeto.categoria
   this.arrPost.push(JSON.parse(objetoJson!))
 }
 }
