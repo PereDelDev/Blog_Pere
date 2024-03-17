@@ -1,0 +1,19 @@
+img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+figure{
+    width: 30%;
+}
+article{
+    gap: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    & div {
+        width: 50%;
+    }
+}
+h2{
+    margin-bottom: 20px;
+}

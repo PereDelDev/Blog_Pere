@@ -1,8 +1,8 @@
 <nav>
   <div class="container">
     <ul>
-      <li (click)="onClick('/posts')">Post</li>
-      <li (click)="onClick('/new')">Nuevo Post</li>
+      <li [routerLink]="['/posts']">Post</li>
+      <li [routerLink]="['/new']">Nuevo Post</li>
     </ul>
   </div>
 </nav>

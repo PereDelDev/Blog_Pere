@@ -2,11 +2,12 @@ import { Component, inject } from '@angular/core';
 import { PostsService } from '../../services/posts.service';
 import { Post } from '../../interfaces/post.interface';
 import { Router } from '@angular/router';
+import { CutTextPipe } from '../../cut-text.pipe';
 
 @Component({
   selector: 'app-lista-posts',
   standalone: true,
-  imports: [],
+  imports: [CutTextPipe],
   templateUrl: './lista-posts.component.html',
   styleUrl: './lista-posts.component.css'
 })
@@ -18,7 +19,7 @@ export class ListaPostsComponent {
   
   arrPost: Post[] = []
   arrCategorias: string[] = []
-
+textoCortado:string = ''
 
 ngOnInit(){
   this.arrPost = this.postServices.getAll()
@@ -30,4 +31,8 @@ onClick(categoria: string){
 onClickPost(id: string){
 this.route.navigate([id])
 }
+onClickGetAll(){
+  this.arrPost = this.postServices.getAll()
+}
+
 }

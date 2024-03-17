@@ -1,32 +1,34 @@
-<form [formGroup]="formulario" (submit)="onSubmit()">
-  <div>
-    <label class="label-control">Titulo</label>
-    <input class="form-control" formControlName="titulo" type="text" />
-  </div>
-  <div>
-    <label class="label-control">Texto</label>
-    <input class="form-control" formControlName="texto" type="text" />
-  </div>
-  <div>
-    <label class="label-control">Autor</label>
-    <input class="form-control" formControlName="autor" type="text" />
-  </div>
-  <div>
-    <label class="label-control">Imagen</label>
-    <input class="form-control" formControlName="imagen" type="text" />
-  </div>
-  <div>
-    <label class="label-control">Fecha</label>
-    <input class="form-control" formControlName="fecha" type="date" />
-  </div>
-  <div>
-    <label class="label-control">Categoria</label>
-    <input class="form-control" formControlName="categoria" type="text" />
-  </div>
-  <input
-    class="btn btn-warning"
-    [disabled]="!formulario.valid"
-    value="Enviar"
-    type="submit"
-  />
-</form>
+<div class="container">
+  <form [formGroup]="formulario" (submit)="onSubmit()">
+    <div>
+      <label class="label-control">Titulo</label>
+      <input class="form-control" formControlName="titulo" type="text" />
+    </div>
+    <div>
+      <label class="label-control">Texto</label>
+      <input class="form-control" formControlName="texto" type="text" />
+    </div>
+    <div>
+      <label class="label-control">Autor</label>
+      <input class="form-control" formControlName="autor" type="text" />
+    </div>
+    <div>
+      <label class="label-control">Imagen</label>
+      <input class="form-control" formControlName="imagen" type="text" />
+    </div>
+    <div>
+      <label class="label-control">Fecha</label>
+      <input class="form-control" formControlName="fecha" type="date" />
+    </div>
+    <div>
+      <label class="label-control">Categoria</label>
+      <input class="form-control" formControlName="categoria" type="text" />
+    </div>
+    <input
+      class="btn"
+      [disabled]="!formulario.valid"
+      value="Enviar"
+      type="submit"
+    />
+  </form>
+</div>

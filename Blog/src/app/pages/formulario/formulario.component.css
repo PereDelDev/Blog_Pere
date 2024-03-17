@@ -1,0 +1,12 @@
+form{
+    width: 600px;
+    margin: 0   auto;
+    margin-top: 60px;
+    padding: 40px;
+    border: 4px solid coral;
+    box-shadow: 0 0 10px;
+}
+.btn{
+    background-color: coral;
+    margin-top: 20px;
+}

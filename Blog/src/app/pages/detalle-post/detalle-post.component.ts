@@ -14,11 +14,11 @@ export class DetallePostComponent {
 postServices = inject(PostsService)
 activatedRoute = inject(ActivatedRoute)
 id = 0
-post: Post = {}
+post: Post | null = null
 ngOnInit(){
   this.activatedRoute.params.subscribe(params =>{
     this.id = Number(params['idPost'])  
   })
-  this.post = this.postServices.getPost(this.id)
+  this.post = this.postServices.getPost(this.id)!
 }
 }
