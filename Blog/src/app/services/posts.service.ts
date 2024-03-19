@@ -43,11 +43,7 @@ getCategories(){
   getPost(id:number){
     return POSTS.find(post => post.id === id)
   }
-  getAllLocalStorage(){
-  const arrPostlocal = localStorage.getItem('arrPosts')
-  return JSON.parse(arrPostlocal!)
-    
-  }
+
 
  
 }
