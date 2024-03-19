@@ -9,6 +9,7 @@ export class PostsService {
     
   arrPost: Post[]= POSTS
   arrPostLocalStorage: Post[]=[]
+  idPost: number = this.arrPost.length + 1
 
   constructor(){
     if(localStorage.getItem('arrPosts')){
@@ -27,7 +28,8 @@ getCategories(){
   
 }
   create(post: Post){
-    
+    post.id= this.idPost
+    this.idPost++
       
       this.arrPost.push(post)
       localStorage.setItem('arrPosts',  JSON.stringify(this.arrPost))
