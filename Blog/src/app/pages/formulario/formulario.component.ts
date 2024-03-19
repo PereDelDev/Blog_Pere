@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { PostsService } from '../../services/posts.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-formulario',
@@ -26,9 +27,8 @@ formulario: FormGroup = new FormGroup({
 onSubmit(){
 this.postServices.create(this.formulario.value)
 this.route.navigate(['/posts'])
+Swal.fire('Post publicado', 'El Post se ha publicado correctamente', 'success')
 
 }
 }
 
-
-//TODO: Darle un id a los nuevos post

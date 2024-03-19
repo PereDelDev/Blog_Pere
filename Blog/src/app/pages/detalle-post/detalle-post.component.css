@@ -16,4 +16,20 @@ article{
 }
 h2{
     margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid coral;
+}
+
+.articulo{
+    background-color: burlywood;
+    padding: 30px;
+    border-radius: 20px;
+    
+}
+.fuera{
+    background-color: coral;
+    margin: 80px 0;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px;
 }

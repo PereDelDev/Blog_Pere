@@ -1,14 +1,18 @@
 <div class="container">
-  <h2>{{ post?.titulo }}</h2>
-  <article>
-    <figure>
-      <img [src]="post?.imagen" alt="" />
-    </figure>
-    <div>
-      <p>{{ post?.texto }}</p>
-      <p>{{ post?.autor }}</p>
-      <p>{{ post?.fecha }}</p>
-      <p>{{ post?.categoria }}</p>
+  <div class="fuera">
+    <div class="articulo">
+      <h2>{{ post?.titulo }}</h2>
+      <article>
+        <figure>
+          <img [src]="post?.imagen" alt="" />
+        </figure>
+        <div>
+          <p>{{ post?.texto }}</p>
+          <p>{{ post?.autor }}</p>
+          <p>{{ post?.fecha }}</p>
+          <p>{{ post?.categoria }}</p>
+        </div>
+      </article>
     </div>
-  </article>
+  </div>
 </div>
