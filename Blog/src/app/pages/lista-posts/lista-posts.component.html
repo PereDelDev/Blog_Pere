@@ -1,21 +1,27 @@
 <div class="container">
-  <button (click)="onClickGetAll()">Todos</button>
-  @if (categoriaJson !== "") {
-    <button (click)="onClick(categoriaJson)">{{ categoriaJson }}</button>
-  }
-  @for (categoria of arrCategorias; track $index) {
-    <button (click)="onClick(categoria)">{{ categoria }}</button>
-  }
-  <div class="row">
+  <div class="botonera">
+    <button class="btn" (click)="onClickGetAll()">Todos</button>
+    @if (categoriaJson !== "") {
+      <button class="btn" (click)="onClick(categoriaJson)">
+        {{ categoriaJson }}
+      </button>
+    }
+    @for (categoria of arrCategorias; track $index) {
+      <button class="btn" (click)="onClick(categoria)">{{ categoria }}</button>
+    }
+  </div>
+  <div class="posts">
     @for (post of arrPost; track post.id) {
-      <article class="col-12 col-md-6 col-lg-3">
+      <article>
         <h3>{{ post.titulo }}</h3>
-        <p>{{ post.autor }}</p>
+        <h6>{{ post.autor }}</h6>
         <img (click)="onClickPost('posts/' + post.id)" [src]="post.imagen" />
         <p>{{ post.texto | cutText }}</p>
         <p>{{ post.fecha }}</p>
         <p>{{ post.categoria }}</p>
-        <button (click)="onClickPost('posts/' + post.id)">Leer mas</button>
+        <button class="btn" (click)="onClickPost('posts/' + post.id)">
+          Leer mas
+        </button>
       </article>
     }
   </div>
