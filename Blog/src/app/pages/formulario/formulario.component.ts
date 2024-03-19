@@ -26,7 +26,9 @@ formulario: FormGroup = new FormGroup({
 onSubmit(){
 this.postServices.create(this.formulario.value)
 this.route.navigate(['/posts'])
-const objetoJson = JSON.stringify(this.formulario.value)
-localStorage.setItem('nuevosPost', objetoJson)
+
 }
 }
+
+
+//TODO: Darle un id a los nuevos post

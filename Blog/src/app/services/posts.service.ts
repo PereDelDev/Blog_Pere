@@ -8,13 +8,33 @@ import { POSTS } from '../data/posts.data';
 export class PostsService {
     
   arrPost: Post[]= POSTS
+  arrPostLocalStorage: Post[]=[]
+
+  constructor(){
+    if(localStorage.getItem('arrPosts')){
+      this.arrPost = JSON.parse(localStorage.getItem('arrPosts')!)
+    }else{
+      this.arrPost = POSTS
+    }
+
+  }
+
 getCategories(){
+
   return [...new Set(this.arrPost.map(post => post.categoria))]
+
+
+  
 }
   create(post: Post){
-    this.arrPost.push(post)
+    
+      
+      this.arrPost.push(post)
+      localStorage.setItem('arrPosts',  JSON.stringify(this.arrPost))
+
   }
   getAll(){
+    
     return this.arrPost
   }
   getByCategoria(cat: string){
@@ -23,5 +43,12 @@ getCategories(){
   getPost(id:number){
     return POSTS.find(post => post.id === id)
   }
+  getAllLocalStorage(){
+  const arrPostlocal = localStorage.getItem('arrPosts')
+  return JSON.parse(arrPostlocal!)
+    
+  }
+
+ 
 }
 

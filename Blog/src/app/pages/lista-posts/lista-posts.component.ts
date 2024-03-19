@@ -22,19 +22,17 @@ export class ListaPostsComponent {
   arrCategorias: string[] = []
 textoCortado:string = ''
 categoriaJson: string = ''
+arrPostLocalStorage: Post[]=[]
 
 
 ngOnInit(){
   this.arrPost = this.postServices.getAll()
   this.arrCategorias = this.postServices.getCategories()
-  const objetoJson = localStorage.getItem('nuevosPost')
+ 
+ console.log(this.arrPostLocalStorage)
  
 
-  if(this.arrPost.length < 7 && objetoJson !== null){
-   let objeto = JSON.parse(objetoJson)
-   this.categoriaJson = objeto.categoria
-  this.arrPost.push(JSON.parse(objetoJson!))
-}
+  
 }
 onClick(categoria: string){
   this.arrPost = this.postServices.getByCategoria(categoria)
